@@ -1,2 +1,101 @@
 # Design-of-Video-Image-Transmission-System-Based-on-ESP32-CAM
-GitHub Desktop tutorial repository
+
+# ESP32-CAM 视频图像传输系统
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.7+-blue.svg)](https://www.python.org/)
+[![MicroPython](https://img.shields.io/badge/MicroPython-v1.20+-red.svg)](https://micropython.org/)
+[![ESP32](https://img.shields.io/badge/ESP32-ESP32--CAM-green.svg)](https://www.espressif.com/)
+
+基于ESP32-CAM和MicroPython的实时视频图像传输系统，支持Web浏览器直接查看和PC端高级处理。
+
+## ✨ 特性
+
+- 📹 **实时视频流**：通过WiFi传输MJPEG视频流
+- 🎯 **双模式支持**：
+  - 独立Web服务器模式（ESP32-CAM直接输出）
+  - UDP/TCP转发模式（PC端处理）
+- 🔧 **可配置参数**：分辨率、画质、帧率动态调整
+
+## 📋 系统架构
+
+### 方案一：独立Web服务器
+ESP32-CAM (Web Server) <--WiFi--> 浏览器 (PC/手机)
+
+
+### 方案二：PC服务器转发
+ESP32-CAM --UDP/TCP--> PC Server --HTTP--> 浏览器
+
+
+## 🚀 快速开始
+
+### 硬件准备
+
+| 硬件 | 数量 | 说明 |
+|------|------|------|
+| ESP32-CAM模块 | 1 | 带OV2640摄像头 |
+| CH340串口模块 | 1 | 程序烧录 |
+| 杜邦线 | 若干 | 连接用 |
+| 5V/2A电源 | 1 | 必须保证供电充足 |
+
+### 软件准备
+
+- [Thonny IDE](https://thonny.org/) 或 [VS Code](https://code.visualstudio.com/)
+- [esptool.py](https://github.com/espressif/esptool) - 固件烧录工具
+- [MicroPython固件](https://github.com/lemariva/micropython-camera-driver) (带摄像头驱动)
+
+### 安装步骤
+
+#### 1. 烧录MicroPython固件
+
+```bash
+# 安装esptool
+pip install esptool
+
+# 擦除Flash
+esptool.py --chip esp32 --port COM3 erase_flash
+
+# 烧录固件
+
+2. 上传代码到ESP32-CAM
+打开Thonny IDE
+
+连接ESP32-CAM（工具 → 选项 → 解释器）
+
+将 esp32_cam/ 目录下的文件上传到设备
+
+修改 main.py 中的WiFi配置
+
+python
+# 修改为您的WiFi信息
+SSID = "你的WiFi名称"
+PASSWORD = "你的WiFi密码"
+3. 运行程序
+方案一：ESP32-CAM自动启动Web服务器
+
+查看串口输出获取IP地址
+
+浏览器访问 http://[ESP32_IP]
+
+方案二：
+
+bash
+# 启动PC端服务器
+cd pc_server
+pip install -r requirements.txt
+python udp_receiver.py
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
