@@ -57,19 +57,20 @@ esptool.py --chip esp32 --port COM3 erase_flash
 
 # 烧录固件
 
-2. 上传代码到ESP32-CAM
+#### 2. 上传代码到ESP32-CAM
 打开Thonny IDE
 
 连接ESP32-CAM（工具 → 选项 → 解释器）
 
 将 esp32_cam/ 目录下的文件上传到设备
 
-修改 main.py 中的WiFi配置
+修改 CAM_pc/web.py 中的WiFi配置
 
-python
+python(VS code/Cursor 配置python环境解释器均可)
 # 修改为您的WiFi信息
 SSID = "你的WiFi名称"
 PASSWORD = "你的WiFi密码"
+
 3. 运行程序
 方案一：ESP32-CAM自动启动Web服务器
 
@@ -86,8 +87,29 @@ pip install -r requirements.txt
 python udp_receiver.py
 
 
+常见问题
+Q: 摄像头初始化失败？
+A:
 
+检查供电（需5V/2A以上）
 
+确认固件支持摄像头驱动
+
+尝试硬件复位
+
+Q: 画面花屏或有水纹？
+A:
+
+电源不足，更换高质量电源
+
+检查摄像头排线是否接触良好
+
+Q: UDP丢包严重？
+A:
+
+降低分辨率或帧率
+
+确保ESP32和PC在同一局域网
 
 
 
