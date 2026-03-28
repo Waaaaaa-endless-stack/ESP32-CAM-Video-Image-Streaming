@@ -112,7 +112,22 @@ A:
 确保ESP32和PC在同一局域网
 
 
+📄 许可证
+本项目采用MIT许可证 - 详见 LICENSE 文件
 
+📧 联系方式
+项目主页：[(https://github.com/Waaaaaa-endless-stack)]
+
+问题反馈：[Issues链接]
+
+邮箱：zhengzha0.leo@outlook.com
+
+🙏 致谢
+MicroPython
+
+lemariva/micropython-camera-driver
+
+microdot
 
 
 
