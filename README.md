@@ -118,7 +118,7 @@ A:
 📧 联系方式
 项目主页：[(https://github.com/Waaaaaa-endless-stack)]
 
-问题反馈：[Issues链接]
+问题反馈：[https://github.com/Waaaaaa-endless-stack/ESP32-CAM-Video-Image-Streaming/issues]
 
 邮箱：zhengzha0.leo@outlook.com
 
@@ -129,7 +129,8 @@ lemariva/micropython-camera-driver
 
 microdot
 
-
+⭐ Star History
+如果这个项目对您有帮助，请给个Star支持一
 
 
 
