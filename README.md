@@ -1,5 +1,5 @@
 # Design-of-Video-Image-Transmission-System-Based-on-ESP32-CAM
-
+MA
 # ESP32-CAM 视频图像传输系统
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -19,8 +19,8 @@
 
 ## 📋 系统架构
 
-### 方案一：独立Web服务器
-ESP32-CAM (Web Server) <--WiFi--> 浏览器 (PC/手机)
+### 方案一：WIFI模块传输视频流
+OV2640 --> ESP32-CAM  <--WiFi--> PC端CV2
 
 
 ### 方案二：PC服务器转发
@@ -34,7 +34,7 @@ ESP32-CAM --UDP/TCP--> PC Server --HTTP--> 浏览器
 | 硬件 | 数量 | 说明 |
 |------|------|------|
 | ESP32-CAM模块 | 1 | 带OV2640摄像头 |
-| CH340串口模块 | 1 | 程序烧录 |
+| USB转TTL | 1 | 程序烧录 |
 | 杜邦线 | 若干 | 连接用 |
 | 5V/2A电源 | 1 | 必须保证供电充足 |
 
